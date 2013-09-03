@@ -1,0 +1,33 @@
+.body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+.jumbotron-short {
+  height: 70px;
+}
+
+.long-control {
+    width: 500px;
+    margin-left: 3em;
+}
+
+.tiny-pills {
+  font-size: .7em;
+}
+
+.deemph {
+  font-size: .85em;
+  color: grey;
+}
+
+
+
+
+
+
+
+
+
+
+

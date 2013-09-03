@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html data-ng-app="searchApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html data-ng-app="searchApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html data-ng-app="searchApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html data-ng-app="searchApp" class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>CrossRef Metadata Search</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    
+    <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+        <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="navbar navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">CR Metadata Search</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <form class="navbar-form navbar-left" role="search">
+            <div class="form-group"
+		 data-ng-controller="TermsController">
+              <input data-ng-model="terms" type="text" 
+		     placeholder="Search CrossRef..." 
+		     class="form-control long-control input-sm"></input>
+            </div>
+          </form>
+	  <ul class="nav navbar-nav navbar-right">
+	    <li><a href="#">Status</a></li>
+	    <li><a href="#">Help</a></li>
+	    <li><a href="#">Sign in</a></li>
+	  </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="jumbotron jumbotron-short">
+  <div class="container">
+    <ul class="nav nav-pills tiny-pills">
+      <li class="dropdown pull-right">
+	<a href="#">Condensed <span class="caret"></span></a>
+      </li>
+      <li class="dropdown">
+	<a href="#">Type <span class="caret"></span></a>
+      </li>
+      <li class="dropdown">
+	<a href="#">Funded by <span class="caret"></span></a>
+      </li>
+      <li class="dropdown">
+	<a href="#">License <span class="caret"></span></a>
+      </li>
+      <li class="dropdown">
+	<a href="#">Publication <span class="caret"></span></a>
+      </li>
+      <li class="dropdown">
+	<a href="#">Directory <span class="caret"></span></a>
+      </li>
+      <li class="dropdown">
+	<a href="#">Subject area <span class="caret"></span></a>
+      </li>
+      <li class="dropdown">
+	<a href="#">Source <span class="caret"></span></a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="container" data-ng-controller="ResultInfoController">
+  <div class="pull-right">
+    <span class="deemph">Page {{info.page}} of {{info.totalResults | number}} results</span>
+  </div>
+</div>
+
+<div data-ng-controller="ResultListController">
+  <div class="container" data-ng-repeat="result in results">
+    <!-- Example row of columns -->
+    <h3>{{result.title[0]}} <small><span class="label label-default">{{result.type}}</span></small></h3>
+    Mulitple language titles
+    Authors ORCIDs, editors ORCIDs, chairs ORCIDs, translators ORCIDs, contribs ORICDs
+    ISSNs, ISBNs, standard designation, DOI
+    
+    subject areas
+    funders funder DOI
+    directory status
+    container titles, multiple, languages
+    publication date
+    last deposit date
+    last index date
+    container publication info: last page first page volume issue
+    
+    --
+    other works of the container
+    other works of the author ORCIDs
+    
+    -- 
+    Citations to DOIs, patents, cited by count, cites count
+
+    --
+    
+    <hr>
+  </div>
+</div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+      <script src="js/vendor/angular.min.js"></script>
+      <script src="js/vendor/bootstrap.min.js"></script>
+      <script src="js/main.js"></script>
+      <script>
+        var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src='//www.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)}(document,'script'));
+      </script>
+    </body>
+</html>
